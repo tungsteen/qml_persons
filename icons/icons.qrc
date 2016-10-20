@@ -1,0 +1,45 @@
+<RCC>
+    <qresource prefix="/icons">
+        <file>address-book-new.svg</file>
+        <file>application-exit.svg</file>
+        <file>application-menu.svg</file>
+        <file>configure.svg</file>
+        <file>dialog-cancel.svg</file>
+        <file>dialog-messages.svg</file>
+        <file>dialog-ok-apply.svg</file>
+        <file>document-edit.svg</file>
+        <file>document-export.svg</file>
+        <file>document-import.svg</file>
+        <file>document-new.svg</file>
+        <file>document-open.svg</file>
+        <file>document-preview-archive.svg</file>
+        <file>document-print-direct.svg</file>
+        <file>document-print.svg</file>
+        <file>document-revert.svg</file>
+        <file>document-save-all.svg</file>
+        <file>document-save-as.svg</file>
+        <file>document-save.svg</file>
+        <file>edit-copy.svg</file>
+        <file>edit-cut.svg</file>
+        <file>edit-delete.svg</file>
+        <file>edit-find.svg</file>
+        <file>edit-paste.svg</file>
+        <file>edit-redo.svg</file>
+        <file>edit-select-all.svg</file>
+        <file>edit-select-invert.svg</file>
+        <file>edit-select-lasso.svg</file>
+        <file>edit-select-none.svg</file>
+        <file>edit-select.svg</file>
+        <file>edit-undo.svg</file>
+        <file>help-about.svg</file>
+        <file>help-whatsthis.svg</file>
+        <file>list-add.svg</file>
+        <file>list-remove.svg</file>
+        <file>preferences-plugin.svg</file>
+        <file>preferences-system.svg</file>
+        <file>system-help.svg</file>
+        <file>system-users.svg</file>
+        <file>trash-empty.svg</file>
+        <file>view-refresh.svg</file>
+    </qresource>
+</RCC>

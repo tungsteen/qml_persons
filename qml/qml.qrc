@@ -1,0 +1,12 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>AboutDialog.qml</file>
+        <file>AboutDialogForm.ui.qml</file>
+        <file>PersonTable.qml</file>
+        <file>PersonTableForm.ui.qml</file>
+        <file>PersonDialog.qml</file>
+        <file>PersonEdit.qml</file>
+        <file>PersonEditForm.ui.qml</file>
+    </qresource>
+</RCC>
