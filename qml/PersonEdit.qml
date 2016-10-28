@@ -3,6 +3,8 @@ import persons 1.0
 
 PersonEditForm
 {
+    id: form
+
     property Person person: Person {}
 
     firstName: person.firstName;
