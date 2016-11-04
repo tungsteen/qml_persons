@@ -50,6 +50,7 @@ ApplicationWindow {
 
         onTriggered: {
             var dialog = personDialogComponent.createObject(root);
+            dialog.person = repository.getPersonAt(personTable.selectedRow);
             dialog.open;
         }
     }
@@ -169,6 +170,11 @@ ApplicationWindow {
         id: personTable
         anchors.fill: parent
         model: personModel
+        property int selectedRow
+
+        onClicked: {
+            personTable.selectedRow = row
+        }
 
         onDoubleClicked: {
             var dialog = personDialogComponent.createObject(root);
