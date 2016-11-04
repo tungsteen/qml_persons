@@ -8,7 +8,7 @@
 * Add Title column to Table
 * Delete Button does not work, fix it. 
   * Additionally add dialog "Are you sure?"
-  * [Optional] implament Undo/Redo functionality
+  * [Optional] Implement Undo/Redo functionality
 * Implement "Import"/"Export" menu
   * Implement "Import"/"Export" dialogs.
 * Activate ModelTest in main.cpp, fix tests
