@@ -6,15 +6,16 @@
 * Some Fields still cannot be saved to database, find and fix them
 * Click on search field will open search dialog, but not close it, fix it
 * Add Title column to Table
-* Delete Button does not work, fix it. Additionally add dialog "Are you sure?"
-** [Optional] implament Undo/Redo functionality
+* Delete Button does not work, fix it. 
+  * Additionally add dialog "Are you sure?"
+  * [Optional] implament Undo/Redo functionality
 * Implement "Import"/"Export" menu
-** Implement "Import"/"Export" dialogs.
+  * Implement "Import"/"Export" dialogs.
 * Activate ModelTest in main.cpp, fix tests
 * Fix sorting
 * Allow users to show/hide columns in tables
 * Optimize model performance
 * Implement direct edit of entries
-** Implement adding photo or avatar of person
-** Implement IBAN validation
-** [Optional] Implement other cool features ;)
+* Implement adding photo or avatar of person
+* Implement IBAN validation
+* [Optional] Implement other cool features ;)
