@@ -7,6 +7,7 @@
 enum Section
 {
     Id,
+    Title,
     Firstname,
     Lastname,
     Company,
@@ -23,6 +24,7 @@ Model::Model(QObject *parent)
 {
     m_roleNames.clear();
     m_roleNames.insert( Id              + Qt::UserRole + 1, QByteArrayLiteral( "id" ) );
+    m_roleNames.insert( Title           + Qt::UserRole + 1, QByteArrayLiteral( "title" ) );
     m_roleNames.insert( Firstname       + Qt::UserRole + 1, QByteArrayLiteral( "firstname" ) );
     m_roleNames.insert( Lastname        + Qt::UserRole + 1, QByteArrayLiteral( "lastname" ) );
     m_roleNames.insert( Company         + Qt::UserRole + 1, QByteArrayLiteral( "company" ) );
@@ -77,6 +79,8 @@ QVariant Model::data(const QModelIndex &index, int role) const
     switch( role ) {
         case Qt::UserRole + 1 + Id:
             return p->id();
+        case Qt::UserRole + 1 + Title:
+            return p->title();
         case Qt::UserRole + 1 + Firstname:
             return p->firstName();
         case Qt::UserRole + 1 + Lastname:

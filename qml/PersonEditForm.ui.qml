@@ -10,7 +10,7 @@ Item {
     implicitHeight: 480
     focus: true
 
-    property alias title: title.currentText
+    property alias title: title.text
     property alias firstName: firstName.text
     property alias lastName: lastName.text
     property alias company: company.text
@@ -48,7 +48,15 @@ Item {
 
                 ComboBox {
                     id: title
-                    editable: true
+                    property string text: "N/A"
+                    editable: true;
+                    model: ["N/A", "Mr.", "Ms."]
+                    onTextChanged: {
+                        currentIndex = find(title.text)
+                    }
+                    onCurrentTextChanged: {
+                        title.text = currentText
+                    }
                 }
 
                 Label {

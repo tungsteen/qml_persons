@@ -5,6 +5,7 @@ PersonEditForm
 {
     property Person person: Person {}
 
+    title: person.title;
     firstName: person.firstName;
     lastName: person.lastName;
     company: person.company;
@@ -21,6 +22,7 @@ PersonEditForm
     mobileNumber: person.mobileNumber;
     mail: person.mail;
 
+    Binding { target: person; property: "title"; value: form.title }
     Binding { target: person; property: "firstName"; value: form.firstName; }
     Binding { target: person; property: "lastName"; value: form.lastName; }
     Binding { target: person; property: "company"; value: form.company; }

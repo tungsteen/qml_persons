@@ -8,6 +8,10 @@ TableView {
     sortIndicatorVisible: true
 
     TableViewColumn {
+        role: "title"
+        title: qsTr("Title")
+    }
+    TableViewColumn {
         role: "firstname"
         title: qsTr("First name")
     }
