@@ -26,6 +26,9 @@ Item {
     property alias mobileArea: mobileArea.text
     property alias mobileNumber: mobileNumber.text
     property alias mail: mail.text
+    property alias institution: bankInstitution.text
+    property alias iban: bankIBAN.text
+    property alias bic: bankBIC.text
 
     RowLayout {
         id: rowLayout
@@ -48,14 +51,19 @@ Item {
 
                 ComboBox {
                     id: title
-                    property string text: "N/A"
+                    property string text
                     editable: true;
                     model: ["N/A", "Mr.", "Ms."]
                     onTextChanged: {
-                        currentIndex = find(title.text)
+                        var idx = find(title.text)
+                        if(idx !== currentIndex) {
+                            currentIndex = idx
+                        }
                     }
-                    onCurrentTextChanged: {
-                        title.text = currentText
+                    onCurrentIndexChanged: {
+                        if(title.text !== currentText) {
+                            title.text = currentText
+                        }
                     }
                 }
 

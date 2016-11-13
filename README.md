@@ -3,7 +3,7 @@
 ## Fix following bugs and implement new features:
 * Fix edit button :white_check_mark:
 * Fix Title for New/Edit Dialog - shall contain Mr, Ms... save this entry to database :white_check_mark:
-* Some Fields still cannot be saved to database, find and fix them
+* Some Fields still cannot be saved to database, find and fix them :white_check_mark:
 * Click on search field will open search dialog, but not close it, fix it
 * Add Title column to Table :white_check_mark:
 * Delete Button does not work, fix it. 

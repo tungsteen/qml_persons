@@ -30,6 +30,7 @@ Model::Model(QObject *parent)
     m_roleNames.insert( Company         + Qt::UserRole + 1, QByteArrayLiteral( "company" ) );
     m_roleNames.insert( Street          + Qt::UserRole + 1, QByteArrayLiteral( "street" ) );
     m_roleNames.insert( ZipCode         + Qt::UserRole + 1, QByteArrayLiteral( "zipcode" ) );
+    m_roleNames.insert( Location        + Qt::UserRole + 1, QByteArrayLiteral( "location" ) );
     m_roleNames.insert( Phone           + Qt::UserRole + 1, QByteArrayLiteral( "phone" ) );
 }
 

@@ -28,7 +28,7 @@ TableView {
         title: qsTr("Street")
     }
     TableViewColumn {
-        role: "zip"
+        role: "zipcode"
         title: qsTr("ZIP Code")
     }
     TableViewColumn {

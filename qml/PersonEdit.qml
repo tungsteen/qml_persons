@@ -21,8 +21,11 @@ PersonEditForm
     mobileArea: person.mobileArea;
     mobileNumber: person.mobileNumber;
     mail: person.mail;
+    institution: person.institution;
+    iban: person.IBAN;
+    bic: person.BIC;
 
-    Binding { target: person; property: "title"; value: form.title }
+    Binding { target: person; property: "title"; value: form.title; }
     Binding { target: person; property: "firstName"; value: form.firstName; }
     Binding { target: person; property: "lastName"; value: form.lastName; }
     Binding { target: person; property: "company"; value: form.company; }
@@ -38,4 +41,7 @@ PersonEditForm
     Binding { target: person; property: "mobileArea"; value: form.mobileArea; }
     Binding { target: person; property: "mobileNumber"; value: form.mobileNumber; }
     Binding { target: person; property: "mail"; value: form.mail; }
+    Binding { target: person; property: "institution"; value: form.institution; }
+    Binding { target: person; property: "IBAN"; value: form.iban; }
+    Binding { target: person; property: "BIC"; value: form.bic; }
 }
