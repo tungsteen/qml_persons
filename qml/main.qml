@@ -58,6 +58,10 @@ ApplicationWindow {
         id: deletePersonAction
         text: qsTr("Delete Person...")
         iconSource: "qrc:/icons/trash-empty.svg"
+
+        onTriggered: {
+            deleteDialog.visible = true
+        }
     }
 
     Action {
@@ -67,7 +71,7 @@ ApplicationWindow {
         iconSource: "qrc:/icons/edit-find.svg"
 
         onTriggered: {
-            searchField.visible = true
+            searchField.visible = !searchField.visible
             searchField.selectAll()
             searchField.forceActiveFocus()
         }
@@ -181,5 +185,19 @@ ApplicationWindow {
             dialog.person = repository.getPersonAt(row);
             dialog.open
         }
+    }
+
+    MessageDialog {
+        id: deleteDialog
+        title: "Delete?"
+        text: "Are you sure?"
+        visible: false
+        standardButtons: StandardButton.Ok | StandardButton.Cancel
+        onAccepted: {
+            var p = repository.getPersonAt(personTable.selectedRow);
+            repository.removePersonById(p.id);
+            visible = false;
+        }
+        onRejected: visible = false;
     }
 }

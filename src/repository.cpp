@@ -215,6 +215,16 @@ void Repository::removePerson(const Person *p)
     emit dataChanged();
 }
 
+void Repository::removePersonById(int id)
+{
+    QSqlQuery q( QString("DELETE FROM person WHERE id = %1").arg(id));
+    if(!q.exec()) {
+        qDebug() << "failed to remove Person.";
+    }
+
+    emit dataChanged();
+}
+
 bool Repository::exportData(const QString &fileName)
 {
     if(fileName.isEmpty() || QFile::exists(fileName)) {

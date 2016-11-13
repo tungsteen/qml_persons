@@ -29,6 +29,7 @@ public:
     Q_INVOKABLE bool exportData(const QString &fileName);
     Q_INVOKABLE bool importData(const QString &fileName);
 
+    Q_INVOKABLE void removePersonById(int id);
 signals:
     void dataChanged();
 
