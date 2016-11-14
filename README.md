@@ -9,8 +9,8 @@
 * Delete Button does not work, fix it. :white_check_mark:
   * Additionally add dialog "Are you sure?" :white_check_mark:
   * [Optional] Implement Undo/Redo functionality
-* Implement "Import"/"Export" menu
-  * Implement "Import"/"Export" dialogs.
+* Implement "Import"/"Export" menu :white_check_mark:
+  * Implement "Import"/"Export" dialogs :white_check_mark:
 * Activate ModelTest in main.cpp, fix tests
 * Fix sorting
 * Allow users to show/hide columns in tables

@@ -49,22 +49,8 @@ Item {
                     text: qsTr("Title:")
                 }
 
-                ComboBox {
+                TitleComboBox {
                     id: title
-                    property string text
-                    editable: true;
-                    model: ["N/A", "Mr.", "Ms."]
-                    onTextChanged: {
-                        var idx = find(title.text)
-                        if(idx !== currentIndex) {
-                            currentIndex = idx
-                        }
-                    }
-                    onCurrentIndexChanged: {
-                        if(title.text !== currentText) {
-                            title.text = currentText
-                        }
-                    }
                 }
 
                 Label {

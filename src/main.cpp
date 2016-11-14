@@ -27,9 +27,9 @@ int main(int argc, char *argv[])
     // clean database
 //    repository->purge();
 
-    if(repository->countPersons() <= 0) {
-        repository->importData(":/data/data.json");
-    }
+//    if(repository->countPersons() <= 0) {
+//        repository->importData(":/data/data.json");
+//    }
 
     bool enableCanFetchMore = true;
     Model *model = new Model(enableCanFetchMore, &app);

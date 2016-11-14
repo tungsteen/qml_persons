@@ -23,6 +23,24 @@ ApplicationWindow {
 
     // File actions
     Action {
+        id: importDataAction
+        text: qsTr("Import data...")
+        onTriggered: fileImportDialog.visible = true
+    }
+
+    Action {
+        id: exportDataAction
+        text: qsTr("Export data...")
+        onTriggered: fileExportDialog.visible = true
+    }
+
+    Action {
+        id: deleteDataAction
+        text: qsTr("Delete data")
+        onTriggered: repository.purge()
+    }
+
+    Action {
         id: quitAction
         text: qsTr("E&xit")
         shortcut: StandardKey.Quit
@@ -91,6 +109,9 @@ ApplicationWindow {
     menuBar: MenuBar {
         Menu {
             title: qsTr("&File")
+            MenuItem { action: importDataAction }
+            MenuItem { action: exportDataAction }
+            MenuItem { action: deleteDataAction }
             MenuItem { action: quitAction }
         }
 
@@ -200,4 +221,37 @@ ApplicationWindow {
         }
         onRejected: visible = false;
     }
+
+    FileDialog {
+        id: fileImportDialog
+        title: "Please choose a file"
+        folder: shortcuts.home
+        selectMultiple: false
+        onAccepted: {
+            console.log("You chose: " + fileDialog.fileUrl)
+            repository.importData(fileDialog.fileUrl)
+            visible = false
+        }
+        onRejected: {
+            console.log("Canceled")
+        }
+        Component.onCompleted: visible = false
+    }
+
+    FileDialog {
+        id: fileExportDialog
+        title: "Please choose a file"
+        folder: shortcuts.home
+        selectMultiple: false
+        onAccepted: {
+            console.log("You chose: " + fileDialog.fileUrl)
+            repository.expotData(fileDialog.fileUrl)
+            visible = false
+        }
+        onRejected: {
+            console.log("Canceled")
+        }
+        Component.onCompleted: visible = false
+    }
+
 }

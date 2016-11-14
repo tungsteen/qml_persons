@@ -8,5 +8,6 @@
         <file>PersonDialog.qml</file>
         <file>PersonEdit.qml</file>
         <file>PersonEditForm.ui.qml</file>
+        <file>TitleComboBox.qml</file>
     </qresource>
 </RCC>

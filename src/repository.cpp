@@ -9,6 +9,7 @@
 #include <QtSql/QSqlQuery>
 #include <QtSql/QSqlError>
 #include <QtCore/QDebug>
+#include <QUrl>
 
 #include <QtCore/QJsonDocument>
 #include <QtCore/QJsonObject>
@@ -27,6 +28,8 @@ void Repository::purge()
     if( !q.exec() ) {
         qDebug() << q.lastError().text();
     }
+
+    emit dataChanged();
 }
 
 int Repository::countPersons() const
@@ -225,6 +228,12 @@ void Repository::removePersonById(int id)
     emit dataChanged();
 }
 
+void Repository::exportData(const QUrl &fileUrl)
+{
+    auto fileName = fileUrl.toLocalFile();
+    exportData(fileName);
+}
+
 bool Repository::exportData(const QString &fileName)
 {
     if(fileName.isEmpty() || QFile::exists(fileName)) {
@@ -254,6 +263,14 @@ bool Repository::exportData(const QString &fileName)
     file.close();
 
     return true;
+}
+
+void Repository::importData(const QUrl &fileUrl)
+{
+    auto fileName = fileUrl.toLocalFile();
+    if (importData(fileName)) {
+        emit dataChanged();
+    }
 }
 
 bool Repository::importData(const QString &fileName)
