@@ -136,7 +136,7 @@ void Repository::addPerson(Person *p)
     emit dataChanged();
 }
 
-void Repository::updatePerson(const Person *p)
+void Repository::updatePerson(Person *p)
 {
     if(!p) {
         qDebug() << "argument is a nullptr.";
@@ -154,13 +154,13 @@ void Repository::updatePerson(const Person *p)
             zip_code      = ?,
             location      = ?,
             birthday      = ?,
-            mail          = ?,
             phone_area    = ?,
             phone_number  = ?,
             mobile_area   = ?,
             mobile_number = ?,
             fax_area      = ?,
             fax_number    = ?,
+            mail          = ?,
             institution   = ?,
             iban          = ?,
             bic           = ?,
@@ -208,7 +208,7 @@ void Repository::updatePerson(const Person *p)
     emit dataChanged();
 }
 
-void Repository::removePerson(const Person *p)
+void Repository::removePerson(Person *p)
 {
     QSqlQuery q( QString("DELETE FROM person WHERE id = %1").arg(p->id()) );
     if(!q.exec()) {
