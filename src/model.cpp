@@ -47,6 +47,7 @@ void Model::setRepository(Repository *r)
         m_repo->disconnect(this);
     }
     m_repo = r;
+
     connect(m_repo, &Repository::dataChanged, [&]() {
         beginResetModel();
         endResetModel();
@@ -68,6 +69,10 @@ int Model::rowCount(const QModelIndex &parent) const
 QVariant Model::data(const QModelIndex &index, int role) const
 {
     if( !m_repo ) {
+        return QVariant();
+    }
+
+    if (m_repo->countPersons() == 0) {
         return QVariant();
     }
 

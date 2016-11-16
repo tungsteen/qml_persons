@@ -228,8 +228,8 @@ ApplicationWindow {
         folder: shortcuts.home
         selectMultiple: false
         onAccepted: {
-            console.log("You chose: " + fileDialog.fileUrl)
-            repository.importData(fileDialog.fileUrl)
+            console.log("You chose: " + fileImportDialog.fileUrl)
+            repository.importData(fileImportDialog.fileUrl)
             visible = false
         }
         onRejected: {
@@ -243,9 +243,10 @@ ApplicationWindow {
         title: "Please choose a file"
         folder: shortcuts.home
         selectMultiple: false
+        selectExisting: false
         onAccepted: {
-            console.log("You chose: " + fileDialog.fileUrl)
-            repository.expotData(fileDialog.fileUrl)
+            console.log("You chose: " + fileExportDialog.fileUrl)
+            repository.exportData(fileExportDialog.fileUrl)
             visible = false
         }
         onRejected: {
