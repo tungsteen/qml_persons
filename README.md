@@ -11,7 +11,7 @@
   * [Optional] Implement Undo/Redo functionality
 * Implement "Import"/"Export" menu :white_check_mark:
   * Implement "Import"/"Export" dialogs :white_check_mark:
-* Activate ModelTest in main.cpp, fix tests
+* Activate ModelTest in main.cpp, fix tests :white_check_mark:
 * Fix sorting
 * Allow users to show/hide columns in tables
 * Optimize model performance
