@@ -12,7 +12,7 @@
 * Implement "Import"/"Export" menu :white_check_mark:
   * Implement "Import"/"Export" dialogs :white_check_mark:
 * Activate ModelTest in main.cpp, fix tests :white_check_mark:
-* Fix sorting
+* Fix sorting :white_check_mark:
 * Allow users to show/hide columns in tables
 * Optimize model performance
 * Implement direct edit of entries

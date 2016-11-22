@@ -8,6 +8,8 @@ class SortFilterProxyModel : public QSortFilterProxyModel
 {
     Q_OBJECT
     Q_PROPERTY(QString filterString READ filterString WRITE setFilterString NOTIFY filterStringChanged)
+    Q_PROPERTY(QByteArray sortRole READ sortRole WRITE setSortRole)
+    Q_PROPERTY(Qt::SortOrder sortOrder READ sortOrder WRITE setSortOrder)
 
     public:
         explicit SortFilterProxyModel(QObject *parent = nullptr);
@@ -16,9 +18,14 @@ class SortFilterProxyModel : public QSortFilterProxyModel
         {
             return m_filterString;
         }
+        QObject *source() const;
+        void setSource(QObject *source);
+        QByteArray sortRole() const;
 
     public slots:
         void setFilterString(QString value);
+        void setSortRole(const QByteArray &role);
+        void setSortOrder(Qt::SortOrder order);
 
     signals:
         void filterStringChanged();
@@ -29,6 +36,7 @@ class SortFilterProxyModel : public QSortFilterProxyModel
 
     private:
         QString m_filterString;
+        QByteArray m_sortRole;
 };
 
 

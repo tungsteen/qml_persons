@@ -126,10 +126,10 @@ void Model::fetchMore(const QModelIndex &parent)
     }
 
     int count = m_repo->countPersons();
-    int addRows = qMin(m_fetched + 10, count);
-    if(addRows > 0) {
-        beginInsertRows(parent, m_fetched, addRows - 1);
-        m_fetched = addRows;
-        endInsertRows();
-    }
+    int remainder = count - m_fetched;
+
+    int rowsToAdd = qMin(10, remainder);
+    beginInsertRows(parent, m_fetched, m_fetched + rowsToAdd - 1);
+    m_fetched += rowsToAdd;
+    endInsertRows();
 }

@@ -10,6 +10,11 @@ SortFilterProxyModel::SortFilterProxyModel(QObject *parent)
     setDynamicSortFilter(true);
 }
 
+void SortFilterProxyModel::setSortOrder(Qt::SortOrder order)
+{
+    QSortFilterProxyModel::sort(0, order);
+}
+
 void SortFilterProxyModel::setFilterString(QString value)
 {
     value = value.toLower();
@@ -55,18 +60,21 @@ bool SortFilterProxyModel::filterAcceptsRow(int sourceRow, const QModelIndex &so
 
 bool SortFilterProxyModel::lessThan(const QModelIndex &left, const QModelIndex &right) const
 {
-    QVariant leftData = sourceModel()->data(left);
-    QVariant rightData = sourceModel()->data(right);
+    return QSortFilterProxyModel::lessThan(left, right);
+}
 
-    if( leftData.type() == QVariant::DateTime ) {
-        return leftData.toDateTime() < rightData.toDateTime();
-    }
-    else if( leftData.type() == QVariant::Date ) {
-        return leftData.toDate() < rightData.toDate();
-    }
-    else if( leftData.type() == QVariant::Time ) {
-        return leftData.toTime() < rightData.toTime();
-    }
+QByteArray SortFilterProxyModel::sortRole() const
+{
+    return m_sortRole;
+}
 
-    return QString::localeAwareCompare(leftData.toString(), rightData.toString()) < 0;
+void SortFilterProxyModel::setSortRole(const QByteArray &role)
+{
+    if (m_sortRole != role) {
+        m_sortRole = role;
+
+        auto roles = sourceModel()->roleNames();
+        QSortFilterProxyModel::setSortRole(roles.key(role));
+
+    }
 }

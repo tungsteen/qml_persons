@@ -37,10 +37,10 @@ int main(int argc, char *argv[])
 
     SortFilterProxyModel *proxy = new SortFilterProxyModel(&app);
     proxy->setSourceModel(model);
-    proxy->sort(0);
+//    proxy->sort(0);
 
-    new ModelTest(model, &app);
-    new ModelTest(proxy, &app);
+//    new ModelTest(model, &app);
+//    new ModelTest(proxy, &app);
 
     QQmlApplicationEngine engine;
     engine.rootContext()->setContextProperty(QStringLiteral("repository"), repository);

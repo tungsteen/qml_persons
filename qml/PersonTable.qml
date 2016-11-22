@@ -4,4 +4,12 @@ PersonTableForm {
     Component.onCompleted: {
         resizeColumnsToContents()
     }
+
+    onSortIndicatorColumnChanged: {
+        personModel.sortRole = getColumn(sortIndicatorColumn).role;
+    }
+
+    onSortIndicatorOrderChanged: {
+        personModel.sortOrder = sortIndicatorOrder;
+    }
 }
