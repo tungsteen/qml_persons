@@ -5,7 +5,7 @@
 
 class Repository;
 
-
+class Person;
 class Model : public QAbstractListModel
 {
     Q_OBJECT
@@ -31,6 +31,8 @@ class Model : public QAbstractListModel
         int m_fetched = 0;
         QHash<int, QByteArray> m_roleNames;
         Repository *m_repo = nullptr;
+        mutable int m_row = -1;
+        mutable Person* m_person;
 };
 
 #endif

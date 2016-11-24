@@ -65,7 +65,6 @@ int Model::rowCount(const QModelIndex &parent) const
     return m_canFetchMore ? m_fetched : m_repo->countPersons();
 }
 
-
 QVariant Model::data(const QModelIndex &index, int role) const
 {
     if( !m_repo ) {
@@ -80,27 +79,30 @@ QVariant Model::data(const QModelIndex &index, int role) const
         return QVariant();
     }
 
-    QScopedPointer<Person> p(m_repo->getPersonAt(index.row()));
+    if (m_row != index.row()) {
+        m_row = index.row();
+        m_person = m_repo->getPersonAt(index.row());
+    }
 
     switch( role ) {
         case Qt::UserRole + 1 + Id:
-            return p->id();
+            return m_person->id();
         case Qt::UserRole + 1 + Title:
-            return p->title();
+            return m_person->title();
         case Qt::UserRole + 1 + Firstname:
-            return p->firstName();
+            return m_person->firstName();
         case Qt::UserRole + 1 + Lastname:
-            return p->lastName();
+            return m_person->lastName();
         case Qt::UserRole + 1 + Company:
-            return p->company();
+            return m_person->company();
         case Qt::UserRole + 1 + Street:
-            return QString("%1 %2").arg(p->street(), p->streetNo()).trimmed();
+            return QString("%1 %2").arg(m_person->street(), m_person->streetNo()).trimmed();
         case Qt::UserRole + 1 + ZipCode:
-            return p->zipCode();
+            return m_person->zipCode();
         case Qt::UserRole + 1 + Location:
-            return p->location();
+            return m_person->location();
         case Qt::UserRole + 1 + Phone:
-            return QString("%1/%2").arg(p->phoneArea(), p->phoneNumber());
+            return QString("%1/%2").arg(m_person->phoneArea(), m_person->phoneNumber());
 
         default:
             break;

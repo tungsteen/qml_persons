@@ -14,7 +14,7 @@
 * Activate ModelTest in main.cpp, fix tests :white_check_mark:
 * Fix sorting :white_check_mark:
 * Allow users to show/hide columns in tables
-* Optimize model performance
+* Optimize model performance :white_check_mark:
 * Implement direct edit of entries
 * Implement adding photo or avatar of person
 * Implement IBAN validation
